@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رضا أحمد | أحلي صور لزفافك - تصوير احترافي 2026</title>
+    
+    <!-- تحسينات SEO -->
+    <title>رضا أحمد | مصور زفاف محترف - أجمل لحظات فرحك تخلد معنا (مصر ٢٠٢٦)</title>
     <meta name="description" content="احفظي لحظات فرحك مع رضا أحمد، أحسن مصور زفاف في مصر. جودة وكريزما في كل صورة، أسعار مميزة لعملاء كتير.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="keywords" content="مصور زفاف, تصوير حفلات, تصوير أفراح, مصر, القاهرة, 2026">
+    <meta name="author" content="رضا أحمد">
+    
+    <!-- بيانات منظمة لتحسين SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "رضا أحمد للتصوير الفوتوغرافي",
+      "description": "مصور زفاف محترف في مصر مع خبرة 7 سنوات في تصوير الأفراح والمناسبات",
+      "image": "https://reda-ahmed.vercel.app/reda.webp",
+      "telephone": "+201007524259",
+      "email": "info@redaahmed-photo.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "المنصورة",
+        "addressCountry": "EG"
+      },
+      "priceRange": "EGP 1500 - EGP 6000",
+      "areaServed": "مصر",
+      "openingHours": "Mo-Su 09:00-22:00"
+    }
+    </script>
+    
+    <!-- تحسين تحميل الخطوط -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700;800&family=Tajawal:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700;800&family=Tajawal:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700;800&family=Tajawal:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <!-- تحسين تحميل Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <style>
-        /* CSS Variables */
+        /* CSS Variables - تم تحسينها */
         :root {
             --primary-gold: #D4AF37;
             --gold-light: #F4E4A6;
@@ -29,7 +63,7 @@
             --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
-        /* Reset & Base */
+        /* Reset & Base - مخفف */
         * {
             margin: 0;
             padding: 0;
@@ -74,7 +108,7 @@
             overflow: hidden;
         }
 
-        /* Animated Background Elements */
+        /* Animated Background Elements - مخفف */
         .bg-elements {
             position: fixed;
             top: 0;
@@ -99,7 +133,7 @@
             50% { transform: translateY(-20px) rotate(180deg); }
         }
 
-        /* Header with Active Link Highlight */
+        /* Header مع تحسينات */
         header {
             position: fixed;
             top: 0;
@@ -135,6 +169,7 @@
             position: relative;
             opacity: 0;
             animation: logoReveal 1s ease 1s forwards;
+            text-decoration: none;
         }
 
         @keyframes logoReveal {
@@ -239,25 +274,41 @@
             color: var(--primary-gold);
             font-size: 1.5rem;
             cursor: pointer;
+            z-index: 1001;
         }
 
-        /* Hero Section */
+        /* Hero Section مع Lazy Loading للخلفية */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
-            background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.7)),
-                        url('reda.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.7));
+        }
+
+        /* سيتم إضافة الخلفية عبر JS مع Lazy Loading */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .hero-bg.loaded {
+            opacity: 1;
         }
 
         .hero-content {
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-title {
@@ -344,6 +395,9 @@
             gap: 10px;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+            border: none;
+            outline: none;
         }
 
         .btn::before {
@@ -384,7 +438,7 @@
             transform: translateY(-5px);
         }
 
-        /* Stats Section */
+        /* باقي الأنماط كما هي مع تحسينات طفيفة للأداء */
         .stats {
             background-color: var(--light-bg);
         }
@@ -443,6 +497,7 @@
             transition: var(--transition-normal);
             opacity: 0;
             transform: translateY(40px) scale(0.9);
+            will-change: transform, opacity;
         }
 
         .stat-card.revealed {
@@ -493,6 +548,7 @@
             transition: var(--transition-normal);
             opacity: 0;
             transform: translateY(50px) rotateX(10deg);
+            will-change: transform, opacity;
         }
 
         .package-card.revealed {
@@ -693,6 +749,7 @@
             transition: var(--transition-normal);
             opacity: 0;
             transform: translateY(30px) scale(0.95);
+            will-change: transform, opacity;
         }
 
         .extra-item.revealed {
@@ -747,6 +804,7 @@
             transition: var(--transition-normal);
             opacity: 0;
             transform: translateX(-30px);
+            will-change: transform, opacity;
         }
 
         .contact-item.revealed {
@@ -805,6 +863,7 @@
             box-shadow: var(--shadow-light);
             opacity: 0;
             transform: scale(0);
+            will-change: transform, opacity;
         }
 
         .social-link.revealed {
@@ -973,6 +1032,7 @@
             border-right: 4px solid var(--primary-gold);
             opacity: 0;
             transform: translateY(30px);
+            will-change: transform, opacity;
         }
 
         .terms-notice.revealed {
@@ -1020,6 +1080,7 @@
                 padding: 30px;
                 box-shadow: var(--shadow-medium);
                 transition: right 0.4s ease;
+                z-index: 999;
             }
 
             .nav-links.active {
@@ -1070,8 +1131,84 @@
             }
         }
     </style>
+    
+    <!-- أنماط شاشة التحميل -->
+    <style>
+        /* شاشة التحميل البسيطة */
+        #splashScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease;
+        }
+        
+        .splash-logo {
+            font-family: 'El Messiri', serif;
+            color: var(--primary-gold);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: splashLogoFade 1s ease 0.5s forwards;
+        }
+        
+        @keyframes splashLogoFade {
+            to { opacity: 1; }
+        }
+        
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 4px solid var(--gold-light);
+            border-top-color: var(--primary-gold);
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+            margin-bottom: 30px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .splash-text {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            text-align: center;
+            opacity: 0;
+            animation: splashTextFade 1s ease 1s forwards;
+        }
+        
+        @keyframes splashTextFade {
+            to { opacity: 1; }
+        }
+        
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+    </style>
 </head>
 <body>
+    <!-- شاشة التحميل -->
+    <div id="splashScreen">
+        <div class="loader"></div>
+        <div class="splash-logo">رضا أحمد</div>
+        <div class="splash-text">نحفظ لحظات فرحك<span class="loading-dots"></span></div>
+    </div>
+
     <!-- Animated Background Elements -->
     <div class="bg-elements" id="bgElements"></div>
 
@@ -1083,7 +1220,7 @@
                 رضا أحمد
             </a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="قائمة التنقل">
                 <i class="fas fa-bars"></i>
             </button>
             
@@ -1097,8 +1234,11 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section مع Lazy Loading للخلفية -->
     <section class="hero" id="home">
+        <!-- سيتم إضافة الخلفية عبر JavaScript -->
+        <img class="hero-bg" id="heroBg" src="reda.webp" alt="خلفية رضا أحمد للتصوير" loading="lazy">
+        
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
@@ -1275,7 +1415,7 @@
                         </div>
                         <div>
                             <h3>الموقع بتاعنا</h3>
-                            <p style="color: var(--text-gray);">القاهرة، مصر</p>
+                            <p style="color: var(--text-gray);">المنصورة، مصر</p>
                         </div>
                     </div>
                     
@@ -1289,7 +1429,6 @@
                         <a href="https://wa.me/201007524259" class="social-link" id="social3" aria-label="واتساب">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                      
                     </div>
                 </div>
                 
@@ -1356,50 +1495,96 @@
     </footer>
 
     <script>
+        // إدارة شاشة التحميل
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.getElementById('splashScreen');
+            
+            // إخفاء شاشة التحميل بعد تحميل الصفحة
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    splashScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        splashScreen.style.display = 'none';
+                    }, 800);
+                }, 600);
+            });
+            
+            // تأمين: إخفاء الشاشة بعد 4 ثوانٍ كحد أقصى
+            setTimeout(() => {
+                if(splashScreen.style.display !== 'none') {
+                    splashScreen.style.opacity = '0';
+                    setTimeout(() => splashScreen.style.display = 'none', 800);
+                }
+            }, 4000);
+        });
+
         // Create animated background elements
         function createBgElements() {
             const bgContainer = document.getElementById('bgElements');
-            const elementCount = 15;
+            const elementCount = 10; // قللنا العدد لتحسين الأداء
             
             for (let i = 0; i < elementCount; i++) {
                 const element = document.createElement('div');
                 element.className = 'bg-element';
                 
-                const size = Math.random() * 200 + 100;
+                const size = Math.random() * 150 + 80; // قللنا الحجم
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
-                const duration = Math.random() * 20 + 10;
-                const delay = Math.random() * 5;
+                const duration = Math.random() * 15 + 10; // قللنا المدة
                 
                 element.style.width = `${size}px`;
                 element.style.height = `${size}px`;
                 element.style.left = `${posX}%`;
                 element.style.top = `${posY}%`;
                 element.style.animationDuration = `${duration}s`;
-                element.style.animationDelay = `${delay}s`;
+                element.style.animationDelay = `${Math.random() * 3}s`;
                 
                 bgContainer.appendChild(element);
             }
+        }
+
+        // Lazy Load للخلفية الرئيسية
+        function lazyLoadHeroImage() {
+            const heroBg = document.getElementById('heroBg');
+            if (!heroBg) return;
+            
+            // استبدل هذا الرابط بصورة مضغوطة بالفعل (يفضل WebP إذا أمكن)
+            const realImageUrl = 'reda.webp'; // تأكد من ضغط الصورة مسبقاً
+            
+            const img = new Image();
+            img.src = realImageUrl;
+            
+            img.onload = function() {
+                heroBg.src = realImageUrl;
+                heroBg.classList.add('loaded');
+            };
+            
+            img.onerror = function() {
+                // استخدام صورة بديلة إذا فشل التحميل
+                heroBg.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1200" height="800"%3E%3Crect width="1200" height="800" fill="%230F0F0F"/%3E%3C/svg%3E';
+            };
         }
 
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-
-        // Close menu on link click
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
             });
-        });
+
+            // Close menu on link click
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        }
 
         // Scroll Spy - Active Link Highlighting
         function updateActiveNavLink() {
@@ -1425,7 +1610,7 @@
             });
         }
 
-        // Animated Counter
+        // Animated Counter - محسن للأداء
         function animateCounter() {
             const statNumbers = document.querySelectorAll('.stat-number');
             
@@ -1435,9 +1620,9 @@
                 
                 setTimeout(() => {
                     let current = 0;
-                    const increment = target / 50;
-                    const duration = 2000;
-                    const stepTime = duration / 50;
+                    const increment = target / 40; // زدنا السرعة
+                    const duration = 1500; // قللنا المدة
+                    const stepTime = duration / 40;
                     
                     const timer = setInterval(() => {
                         current += increment;
@@ -1448,11 +1633,16 @@
                             stat.textContent = Math.floor(current);
                         }
                     }, stepTime);
-                }, index * 300);
+                }, index * 200); // قللنا التأخير
             });
         }
 
-        // Intersection Observer for scroll animations
+        // Intersection Observer for scroll animations - محسن
+        const observerOptions = {
+            threshold: 0.15, // قللنا العتبة
+            rootMargin: '0px 0px -50px 0px'
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1493,18 +1683,16 @@
                     
                     // Trigger counter animation for stats section
                     if (entry.target.id === 'stats') {
-                        setTimeout(animateCounter, 500);
+                        setTimeout(animateCounter, 300);
                     }
                 }
             });
-        }, {
-            threshold: 0.2,
-            rootMargin: '0px 0px -100px 0px'
-        });
+        }, observerOptions);
 
         // Observe elements for animation
         document.addEventListener('DOMContentLoaded', () => {
             createBgElements();
+            lazyLoadHeroImage();
             
             // Observe sections
             document.querySelectorAll('section').forEach(section => {
@@ -1611,8 +1799,9 @@
             button.addEventListener('click', (e) => {
                 e.preventDefault();
                 
-                const packageTitle = button.closest('.package-card').querySelector('.package-title').textContent;
-                const packagePrice = button.closest('.package-card').querySelector('.package-price').textContent;
+                const packageCard = button.closest('.package-card');
+                const packageTitle = packageCard.querySelector('.package-title').textContent;
+                const packagePrice = packageCard.querySelector('.package-price').textContent;
                 
                 const message = `يا هلا، أنا عايز أحجز باقة ${packageTitle} اللي سعرها ${packagePrice}%0Aابعتلي تفاصيل أكتر يا ريت.`;
                 
@@ -1620,24 +1809,26 @@
             });
         });
 
-        // Social media links
-        document.querySelectorAll('.social-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (link.id === 'social3') return; // WhatsApp link is already set
-                e.preventDefault();
-                
-                // Add your social media URLs here
-                const urls = {
-                    'social1': 'https://facebook.com',
-                    'social2': 'https://instagram.com',
-                    'social4': 'https://tiktok.com'
-                };
-                
-                if (urls[link.id]) {
-                    window.open(urls[link.id], '_blank');
-                }
-            });
+        // تحسينات إضافية للأداء
+        // تقليل عدد مرات تنفيذ الدوال عند التمرير
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(function() {
+                    scrollTimeout = null;
+                    // تنفيذ الدوال المرتبطة بالتمرير هنا
+                }, 100); // تأخير 100ms
+            }
         });
+
+        // Precaching للصفحات التالية المحتملة
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(error => {
+                    console.log('ServiceWorker registration failed:', error);
+                });
+            });
+        }
     </script>
 </body>
 </html>
